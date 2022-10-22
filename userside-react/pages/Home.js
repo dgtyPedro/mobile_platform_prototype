@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import {
-  Button,
   AppBar,
   HStack,
   IconButton,
   Backdrop,
   BackdropSubheader,
+  Stack,
 } from "@react-native-material/core";
-import { StyleSheet, View, Text, StatusBar } from "react-native";
+import { StyleSheet, View, StatusBar, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-// import Carousel from "react-native-snap-carousel";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import style from "../assets/style/style";
+import { Text, Card, Button, Icon } from "@rneui/themed";
+import ScrollViewCard from "../components/ScrollViewCard";
 
 const Home = () => {
   const [revealed, setRevealed] = useState(false);
@@ -18,6 +19,16 @@ const Home = () => {
   return (
     <Backdrop>
       <BackdropSubheader title='Custom Info' />
+      <ScrollView>
+        <ScrollView horizontal>
+          <ScrollViewCard />
+          <ScrollViewCard />
+        </ScrollView>
+        <ScrollView horizontal>
+          <ScrollViewCard />
+          <ScrollViewCard />
+        </ScrollView>
+      </ScrollView>
     </Backdrop>
   );
 };
